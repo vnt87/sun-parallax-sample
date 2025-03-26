@@ -1,0 +1,10 @@
+/* Basic styles */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
