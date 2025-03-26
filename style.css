@@ -1,10 +1,131 @@
-/* Basic styles */
+/* Base styles */
 body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    overflow: hidden;
 }
 
-h1 {
-    color: #333;
+/* Container for the card */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Card styling with 3D perspective */
+.card {
+    width: 100%;
+    aspect-ratio: 1;
+    background: transparent;
+    position: relative;
+    transform-style: preserve-3d; /* Enable 3D space */
+    transform: perspective(1000px); /* Set perspective as per docs */
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D for nested elements */
+}
+
+/* Layer styling */
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Individual layer transforms with increased depth */
+.layer-top {
+    transform: translateZ(120px); /* Significant pop out for top layer */
+}
+
+.layer-mid {
+    transform: translateZ(60px); /* Medium depth */
+}
+
+.layer-last {
+    transform: translate3d(20px, 20px, 20px); /* Offset 20px right, 20px down, and Z depth */
+}
+
+/* Chips layer styling */
+.layer-chips {
+    transform: translateZ(150px); /* Highest layer, above all others */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.chips-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual chip positioning */
+.chip:first-child {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.chip:last-child {
+    position: absolute;
+    left: 0;
+    top: 80%;
+    transform: translateY(-50%);
+}
+
+.chip {
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chip img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.chip span {
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* Glare effect styling */
+.js-tilt-glare {
+    border-radius: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
 }

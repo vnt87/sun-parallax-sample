@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
+    <title>Parallax Tilt Effect</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+        <!-- Single card with three parallax layers -->
+        <div class="card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+            <div class="card-content">
+                <!-- Parallax layers using local images -->
+                <div class="layer layer-top">
+                    <img src="assets/asterisk-top.png" alt="Top Layer">
+                </div>
+                <div class="layer layer-mid">
+                    <img src="assets/asterisk-mid.png" alt="Middle Layer">
+                </div>
+                <div class="layer layer-last">
+                    <img src="assets/asterisk-last.png" alt="Bottom Layer">
+                </div>
+                <!-- New chip layer -->
+                <div class="layer layer-chips">
+                    <div class="chips-container">
+                        <div class="chip">
+                            <img src="assets/icons/icon-human.svg" alt="Human icon">
+                            <span>Human-centric</span>
+                        </div>
+                        <div class="chip">
+                            <img src="assets/icons/icon-ai.svg" alt="AI icon">
+                            <span>AI-ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Add Lexend font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vanilla-tilt.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
