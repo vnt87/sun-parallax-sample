@@ -1,4 +1,4 @@
-# Sun Parallax Sample
+# Sun* Parallax Sample
 
 This is just a simple deployment to showcase an interaction for my Figma design.
 
